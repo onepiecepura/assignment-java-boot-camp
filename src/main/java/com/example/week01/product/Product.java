@@ -2,9 +2,10 @@ package com.example.week01.product;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class Product{
+public class Product implements Serializable {
 	@Id
 	private int id;
 	private String name;

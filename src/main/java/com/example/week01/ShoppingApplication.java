@@ -1,6 +1,7 @@
 package com.example.week01;
 
 import com.example.week01.product.ProductRepository;
+import com.example.week01.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,12 +14,16 @@ public class ShoppingApplication {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @PostConstruct
     public void init() {
         mock_products();
     }
 
     private void mock_products() {
+        userRepository.save(MockDataSource.getUser());
         productRepository.save(MockDataSource.getProduct1());
         productRepository.save(MockDataSource.getProduct2());
     }
@@ -26,7 +31,5 @@ public class ShoppingApplication {
     public static void main(String[] args) {
         SpringApplication.run(ShoppingApplication.class, args);
     }
-
-
 
 }
