@@ -1,11 +1,6 @@
 package com.example.week01.product;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
-public class Product{
-	@Id
+public class ProductDetailResponse{
 	private int id;
 	private String name;
 	private String description;
@@ -15,7 +10,34 @@ public class Product{
 	private String image;
 	private int size;
 
-	public Product() {
+	public ProductDetailResponse() {
+	}
+
+	public ProductDetailResponse(Product product) {
+		this.setId(product.getId());
+		this.setName(product.getName());
+		this.setDescription(product.getDescription());
+		this.setCategory(product.getCategory());
+		this.setBrand(product.getBrand());
+		this.setPrice(product.getPrice());
+		this.setImage(product.getImage());
+		this.setSize(product.getSize());
+	}
+
+	public void setImage(String image){
+		this.image = image;
+	}
+
+	public String getImage(){
+		return image;
+	}
+
+	public void setSize(int size){
+		this.size = size;
+	}
+
+	public int getSize(){
+		return size;
 	}
 
 	public void setPrice(double price){
@@ -64,21 +86,5 @@ public class Product{
 
 	public String getBrand(){
 		return brand;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
 	}
 }
