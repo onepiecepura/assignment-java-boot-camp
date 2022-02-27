@@ -12,6 +12,8 @@ public  class MockDataSource {
         product.setCategory("sneakers");
         product.setBrand("Adidas");
         product.setPrice(28900.00);
+        product.setImage("/img/adidas_halo_lvory.jpg");
+        product.setSize(43);
         return product;
     }
 
@@ -23,6 +25,8 @@ public  class MockDataSource {
         product.setCategory("sport sneakers");
         product.setBrand("Onitsuka Tiger");
         product.setPrice(3500.00);
+        product.setImage("/img/onitsuka_mexico_66.jpg");
+        product.setSize(40);
         return product;
     }
 
