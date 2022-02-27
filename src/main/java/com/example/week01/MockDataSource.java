@@ -1,6 +1,7 @@
 package com.example.week01;
 
 import com.example.week01.product.Product;
+import com.example.week01.user.User;
 
 public  class MockDataSource {
 
@@ -28,6 +29,14 @@ public  class MockDataSource {
         product.setImage("/img/onitsuka_mexico_66.jpg");
         product.setSize(40);
         return product;
+    }
+
+    public static User getUser() {
+        User user = new User();
+        user.setId(1);
+        user.setUsername("onepiecepura");
+        user.setAddress("4028 Stanley Avenue, Garden City, New York");
+        return user;
     }
 
 }
